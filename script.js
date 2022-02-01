@@ -24,10 +24,7 @@ function computerPlay() {
         default:
             computerSelection = 'Invalid Arguement'
         }
-
-    console.log('Computer chose: ' + computerSelection);
 }
-computerPlay();
 
 // Prompt player to choose number from 1-3
 function playerPlay() {
@@ -50,11 +47,12 @@ function playerPlay() {
         }
     console.log('Player chose: ' + playerSelection);
 }
-playerPlay();
 
 // Play a whole round
 function playRound(playerSelection, computerSelection) {
-    switch(playerSelection) {                               // Determine player selection
+    playerPlay();
+    computerPlay();
+    switch(playerSelection) {
     case 'Rock':
         if (computerSelection === 'Paper') {
             console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
@@ -90,4 +88,14 @@ function playRound(playerSelection, computerSelection) {
     }
     console.log(`Player has: ${playerPoints}, Computer has: ${computerPoints}`)
 }
-playRound(playerSelection, computerSelection);
+
+// Loops game until either Player or Computer reaches 5
+function game() {
+    while (playerPoints != 5 || computerPoints != 5) {
+        playRound(playerSelection, computerSelection);
+    }
+    console.log(`GAME OVER!`)
+    
+}
+
+game();
