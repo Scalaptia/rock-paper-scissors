@@ -1,5 +1,8 @@
 let playerSelection;
 let computerSelection;
+let playerPoints = 0;
+let computerPoints = 0;
+
 
 // Choose a random number (1-3) for the COMPUTER to play
 function computerPlay() {
@@ -28,8 +31,8 @@ computerPlay();
 
 // Prompt player to choose number from 1-3
 function playerPlay() {
-    playerSelection = parseInt(prompt('Choose 1-3: '));  // Choose random number
-    switch(playerSelection) {
+    playerSelection = parseInt(prompt('Choose 1-3: '));  // Prompt to choose number and convert to int
+    switch(playerSelection) {                            // Convert number to RPS
         case 1:
             playerSelection = 'Rock'
             break;
@@ -47,19 +50,44 @@ function playerPlay() {
         }
     console.log('Player chose: ' + playerSelection);
 }
-
-    
-
 playerPlay();
 
+// Play a whole round
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === 1) {
-        if (computerSelection === 2) {
+    switch(playerSelection) {                               // Determine player selection
+    case 'Rock':
+        if (computerSelection === 'Paper') {
             console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
-        } else if (computerSelection === 3) {
+            computerPoints +++ 1;
+        } else if (computerSelection === 'Scissors') {
             console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
-        } else (console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`));
+            playerPoints +++ 1;
+        } else
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
+        break;
 
+    case 'Paper':
+        if (computerSelection === 'Scissors') {
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
+            computerPoints +++ 1;
+        } else if (computerSelection === 'Rock') {
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
+            playerPoints +++ 1;
+        } else
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
+        break;
+
+    case 'Scissors':
+        if (computerSelection === 'Rock') {
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
+            computerPoints +++ 1;
+        } else if (computerSelection === 'Paper') {
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
+            playerPoints +++ 1;
+        } else
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
+        break;
     }
+    console.log(`Player has: ${playerPoints}, Computer has: ${computerPoints}`)
 }
-playRound()
+playRound(playerSelection, computerSelection);
