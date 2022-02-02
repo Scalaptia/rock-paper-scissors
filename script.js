@@ -2,13 +2,13 @@ let playerSelection;
 let computerSelection;
 let playerPoints = 0;
 let computerPoints = 0;
-
+let roundsPlayed = 0;
 
 // Choose a random number (1-3) for the COMPUTER to play
 function computerPlay() {
     const randomNumber = Math.floor(Math.random() * 3) + 1  // Choose random number
     computerSelection = randomNumber;
-    switch(computerSelection) {
+    switch(computerSelection) {                             // Convert number to RPS
         case 1:
             computerSelection = 'Rock'
             break;
@@ -45,11 +45,10 @@ function playerPlay() {
         default:
             playerSelection = 'Invalid Arguement'
         }
-    console.log('Player chose: ' + playerSelection);
 }
 
 // Play a whole round
-function playRound(playerSelection, computerSelection) {
+function playRound() {
     playerPlay();
     computerPlay();
     switch(playerSelection) {
@@ -86,15 +85,28 @@ function playRound(playerSelection, computerSelection) {
             console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
         break;
     }
+    roundsPlayed +++ 1;
     console.log(`Player has: ${playerPoints}, Computer has: ${computerPoints}`)
 }
 
 // Loops game until either Player or Computer reaches 5
 function game() {
-    while (playerPoints != 5 || computerPoints != 5) {
+    while (i = 1) {
+        if (computerPoints === 5) {
+            winner = 'COMPUTER'
+            break;
+        }
+
+        if (playerPoints === 5) {
+            winner = 'PLAYER'
+            break;
+        }
+
+        console.log(`Round ${roundsPlayed + 1}`)
         playRound(playerSelection, computerSelection);
     }
-    console.log(`GAME OVER!`)
+
+    console.log(`GAME OVER! ${winner} WINS!`)
     
 }
 
