@@ -26,33 +26,17 @@ function computerPlay() {
         }
 }
 
-// Prompt player to choose number from 1-3
+// Prompt player to choose RPS
 function playerPlay() {
-    playerSelection = parseInt(prompt('Choose 1-3: '));  // Prompt to choose number and convert to int
-    switch(playerSelection) {                            // Convert number to RPS
-        case 1:
-            playerSelection = 'Rock'
-            break;
-
-        case 2:
-            playerSelection = 'Paper'
-            break;
-
-        case 3:
-            playerSelection = 'Scissors'
-            break;
-
-        default:
-            playerSelection = 'Invalid Arguement'
-        }
+    playerSelection = prompt('Choose your weapon! Rock, Paper or Scissors?');
 }
 
 // Play a whole round
 function playRound() {
     playerPlay();
     computerPlay();
-    switch(playerSelection) {
-    case 'Rock':
+    switch(playerSelection.toLowerCase()) {
+    case 'rock':
         if (computerSelection === 'Paper') {
             console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
             computerPoints +++ 1;
@@ -63,7 +47,7 @@ function playRound() {
             console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
         break;
 
-    case 'Paper':
+    case 'paper':
         if (computerSelection === 'Scissors') {
             console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
             computerPoints +++ 1;
@@ -74,7 +58,7 @@ function playRound() {
             console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
         break;
 
-    case 'Scissors':
+    case 'scissors':
         if (computerSelection === 'Rock') {
             console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
             computerPoints +++ 1;
