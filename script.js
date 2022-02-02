@@ -10,15 +10,15 @@ function computerPlay() {
     computerSelection = randomNumber;
     switch(computerSelection) {                             // Convert number to RPS
         case 1:
-            computerSelection = 'Rock'
+            computerSelection = 'ROCK'
             break;
 
         case 2:
-            computerSelection = 'Paper'
+            computerSelection = 'PAPER'
             break;
 
         case 3:
-            computerSelection = 'Scissors'
+            computerSelection = 'SCISSORS'
             break;
 
         default:
@@ -28,45 +28,45 @@ function computerPlay() {
 
 // Prompt player to choose RPS
 function playerPlay() {
-    playerSelection = prompt('Choose your weapon! Rock, Paper or Scissors?');
+    playerSelection = prompt('Choose your weapon! Rock, Paper or Scissors');
 }
 
 // Play a whole round
 function playRound() {
     playerPlay();
     computerPlay();
-    switch(playerSelection.toLowerCase()) {
-    case 'rock':
-        if (computerSelection === 'Paper') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
+    switch(playerSelection.toUpperCase()) {
+    case 'ROCK':
+        if (computerSelection === 'PAPER') {
+            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Computer Wins!`);
             computerPoints +++ 1;
-        } else if (computerSelection === 'Scissors') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
+        } else if (computerSelection === 'SCISSORS') {
+            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Player Wins!`);
             playerPoints +++ 1;
         } else
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
+            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Its a draw!`);
         break;
 
-    case 'paper':
-        if (computerSelection === 'Scissors') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
+    case 'PAPER':
+        if (computerSelection === 'SCISSORS') {
+            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Computer Wins!`);
             computerPoints +++ 1;
-        } else if (computerSelection === 'Rock') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
+        } else if (computerSelection === 'ROCK') {
+            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Player Wins!`);
             playerPoints +++ 1;
         } else
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
+            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Its a draw!`);
         break;
 
-    case 'scissors':
-        if (computerSelection === 'Rock') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
+    case 'SCISSORS':
+        if (computerSelection === 'ROCK') {
+            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Computer Wins!`);
             computerPoints +++ 1;
-        } else if (computerSelection === 'Paper') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
+        } else if (computerSelection === 'PAPER') {
+            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Player Wins!`);
             playerPoints +++ 1;
         } else
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
+            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Its a draw!`);
         break;
     }
     roundsPlayed +++ 1;
