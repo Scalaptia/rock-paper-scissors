@@ -74,8 +74,8 @@ function playRound() {
 }
 
 // Loops game until either Player or Computer reaches 5
-function game() {
-    while (i = 1) {
+window.onload = function game() {
+    while (true) {
         if (computerPoints === 5) {
             winner = 'COMPUTER'
             break;
@@ -93,5 +93,3 @@ function game() {
     console.log(`GAME OVER! ${winner} WINS!`)
     
 }
-
-game();
