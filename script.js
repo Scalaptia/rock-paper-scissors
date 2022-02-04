@@ -4,26 +4,10 @@ let playerPoints = 0;
 let computerPoints = 0;
 let roundsPlayed = 0;
 
-// Choose a random number (1-3) for the COMPUTER to play
+// Choose a random weapon for the COMPUTER to play
 function computerPlay() {
-    const randomNumber = Math.floor(Math.random() * 3) + 1  // Choose random number
-    computerSelection = randomNumber;
-    switch(computerSelection) {                             // Convert number to RPS
-        case 1:
-            computerSelection = 'ROCK'
-            break;
-
-        case 2:
-            computerSelection = 'PAPER'
-            break;
-
-        case 3:
-            computerSelection = 'SCISSORS'
-            break;
-
-        default:
-            computerSelection = 'Invalid Arguement'
-        }
+    const weapons = ['ROCK', 'PAPER', 'SCISSORS']
+    computerSelection = weapons[Math.floor(Math.random() * weapons.length)];
 }
 
 // Prompt player to choose RPS
