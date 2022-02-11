@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Console RPS</title>
+    <title>Rock Paper Scissors</title>
     <link rel="shortcut icon" type="image/jpg" href="./favicon.ico"/>
-    <style src="./style.css"></style>
+    <link rel='stylesheet' href="./style.css">
     <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <header class="header">
         <h1 class="title">Rock Paper Scissors</h1>
     </header>
     <main id="main">
-        <div id="top">
-            <p class="winner">Choose your weapon!</p>
-            <p class="playout">First to 5 points wins</p>
-        </div>
-
         <div id="rounds">
             <p class="round">Round 0</p>
+        </div>
+        
+        <div id="top">
+            <p class="winner">Choose your weapon!</p>
+            <p class="playout">First to 5 wins</p>
         </div>
 
         <div id="buttons">
@@ -30,12 +36,9 @@
         </div> 
 
         <div id="points">
-            <p class="playerScore">Player Score = 0</p>
-            <p class="computerScore">Computer Score = 0</p>
+            <p class="playerScore">Player: 0</p>
+            <p class="computerScore">Computer: 0</p>
         </div>
-        
-
     </main>
-        
 </body>
 </html>

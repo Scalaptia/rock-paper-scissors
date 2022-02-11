@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(11, 11, 22);
+    color: #ffffff;
+    font-family: 'Bebas Neue', cursive;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    font-family: 'Press Start 2P', cursive;
+    background: rgb(0, 0, 12);
+    color: rgb(240, 240, 240);
+    height: 4.5em;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 0 16px;
+    justify-content: center;
+    text-align: center;
+}
+
+#main {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#top {
+    font: bold;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.winner,
+.playout {
+    margin: 10px;
+    padding: 0px;
+}
+
+#rounds {
+    font: bold;
+    font-size: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.round {
+    margin: 10px;
+    padding: 0px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.button {
+    border-radius: 10px;
+    background-color: rgb(56, 56, 56);
+    width: 160px;
+    height: 160px;
+    font-size: 85px;
+}
+
+#points {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    padding: 10px;
+    margin: 0 auto;
+    gap: 80px;
+    font-size: 40px;
+}

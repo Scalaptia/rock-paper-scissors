@@ -87,8 +87,8 @@ const computerScore = document.querySelector('.computerScore');
 const round = document.querySelector('.round');
 
 function updateScore() {
-    playerScore.innerText = `Player Score = ${playerPoints}`
-    computerScore.innerText = `Computer Score = ${computerPoints}`
+    playerScore.innerText = `Player: ${playerPoints}`
+    computerScore.innerText = `Computer: ${computerPoints}`
     round.innerText = `Round ${roundsPlayed}`
 }
 
@@ -98,7 +98,7 @@ function restartGame(){
     roundsPlayed = 0;
     updateScore();
     winner.innerText = 'Choose your weapon!';
-    playout.innerText = `First to 5 points wins`;
+    playout.innerText = `First to 5 wins`;
 }
 
 rockBtn.addEventListener('click', () => playRound('ROCK'));
