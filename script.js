@@ -75,5 +75,4 @@ window.onload = function game() {
     }
 
     console.log(`GAME OVER! ${winner} WINS!`)
-    
 }
