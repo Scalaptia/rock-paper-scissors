@@ -19,10 +19,12 @@ function playRound(playerSelection) {
             winner.innerText = 'Computer Wins!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             computerPoints +++ 1;
+            updateScore();
         } else if (computerSelection === 'SCISSORS') {
             winner.innerText = 'You Win!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             playerPoints +++ 1;
+            updateScore();
         } else
             winner.innerText = 'Its a draw!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
@@ -33,10 +35,12 @@ function playRound(playerSelection) {
             winner.innerText = 'Computer Wins!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             computerPoints +++ 1;
+            updateScore();
         } else if (computerSelection === 'ROCK') {
             winner.innerText = 'You Win!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             playerPoints +++ 1;
+            updateScore();
         } else
             winner.innerText = 'Its a draw!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
@@ -47,10 +51,12 @@ function playRound(playerSelection) {
             winner.innerText = 'Computer Wins!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             computerPoints +++ 1;
+            updateScore();
         } else if (computerSelection === 'PAPER') {
             winner.innerText = 'You Win!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             playerPoints +++ 1;
+            updateScore();
         } else
             winner.innerText = 'Its a draw!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
@@ -87,6 +93,13 @@ const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
 const winner = document.querySelector('.winner');
 const playout = document.querySelector('.playout');
+const playerScore = document.querySelector('.playerScore');
+const computerScore = document.querySelector('.computerScore');
+
+function updateScore() {
+    playerScore.innerText = `Player Score = ${playerPoints}`
+    computerScore.innerText = `Computer Score = ${computerPoints}`
+}
 
 rockBtn.addEventListener('click', () => playRound('ROCK'));
 paperBtn.addEventListener('click', () => playRound('PAPER'));
