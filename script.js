@@ -16,35 +16,44 @@ function playRound(playerSelection) {
     switch(playerSelection) {
     case 'ROCK':
         if (computerSelection === 'PAPER') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
+            winner.innerText = 'Computer Wins!';
+            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             computerPoints +++ 1;
         } else if (computerSelection === 'SCISSORS') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
+            winner.innerText = 'You Win!';
+            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             playerPoints +++ 1;
         } else
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
+            winner.innerText = 'Its a draw!';
+            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
         break;
 
     case 'PAPER':
         if (computerSelection === 'SCISSORS') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
+            winner.innerText = 'Computer Wins!';
+            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             computerPoints +++ 1;
         } else if (computerSelection === 'ROCK') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
+            winner.innerText = 'You Win!';
+            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             playerPoints +++ 1;
         } else
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
+            winner.innerText = 'Its a draw!';
+            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
         break;
 
     case 'SCISSORS':
         if (computerSelection === 'ROCK') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
+            winner.innerText = 'Computer Wins!';
+            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             computerPoints +++ 1;
         } else if (computerSelection === 'PAPER') {
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
+            winner.innerText = 'You Win!';
+            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             playerPoints +++ 1;
         } else
-            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
+            winner.innerText = 'Its a draw!';
+            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
         break;
     }
     roundsPlayed +++ 1;
@@ -76,6 +85,8 @@ function playRound(playerSelection) {
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
+const winner = document.querySelector('.winner');
+const playout = document.querySelector('.playout');
 
 rockBtn.addEventListener('click', () => playRound('ROCK'));
 paperBtn.addEventListener('click', () => playRound('PAPER'));
