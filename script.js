@@ -10,47 +10,41 @@ function computerPlay() {
     computerSelection = weapons[Math.floor(Math.random() * weapons.length)];
 }
 
-// Prompt player to choose RPS
-function playerPlay() {
-    playerSelection = prompt('Choose your weapon! Rock, Paper or Scissors');
-}
-
 // Play a whole round
-function playRound() {
-    playerPlay();
+function playRound(playerSelection) {
     computerPlay();
-    switch(playerSelection.toUpperCase()) {
+    switch(playerSelection) {
     case 'ROCK':
         if (computerSelection === 'PAPER') {
-            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Computer Wins!`);
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
             computerPoints +++ 1;
         } else if (computerSelection === 'SCISSORS') {
-            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Player Wins!`);
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
             playerPoints +++ 1;
         } else
-            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Its a draw!`);
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
         break;
 
     case 'PAPER':
         if (computerSelection === 'SCISSORS') {
-            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Computer Wins!`);
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
             computerPoints +++ 1;
         } else if (computerSelection === 'ROCK') {
-            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Player Wins!`);
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
             playerPoints +++ 1;
         } else
-            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Its a draw!`);
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
         break;
 
     case 'SCISSORS':
         if (computerSelection === 'ROCK') {
-            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Computer Wins!`);
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Computer Wins!`);
             computerPoints +++ 1;
         } else if (computerSelection === 'PAPER') {
-            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Player Wins!`);
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Player Wins!`);
             playerPoints +++ 1;
         } else
-            console.log(`Player chose: ${playerSelection.toUpperCase()}, Computer chose: ${computerSelection}. Its a draw!`);
+            console.log(`Player chose: ${playerSelection}, Computer chose: ${computerSelection}. Its a draw!`);
         break;
     }
     roundsPlayed +++ 1;
@@ -58,7 +52,7 @@ function playRound() {
 }
 
 // Loops game until either Player or Computer reaches 5
-window.onload = function game() {
+/*window.onload = function game() {
     while (true) {
         if (computerPoints === 5) {
             winner = 'COMPUTER'
@@ -75,4 +69,14 @@ window.onload = function game() {
     }
 
     console.log(`GAME OVER! ${winner} WINS!`)
-}
+} */
+
+// UI
+
+const rockBtn = document.getElementById('rockBtn');
+const paperBtn = document.getElementById('paperBtn');
+const scissorsBtn = document.getElementById('scissorsBtn');
+
+rockBtn.addEventListener('click', () => playRound('ROCK'));
+paperBtn.addEventListener('click', () => playRound('PAPER'));
+scissorsBtn.addEventListener('click', () => playRound('SCISSORS'));
