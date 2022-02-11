@@ -19,12 +19,12 @@ function playRound(playerSelection) {
             winner.innerText = 'Computer Wins!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             computerPoints +++ 1;
-            updateScore();
+            
         } else if (computerSelection === 'SCISSORS') {
             winner.innerText = 'You Win!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             playerPoints +++ 1;
-            updateScore();
+            
         } else
             winner.innerText = 'Its a draw!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
@@ -35,12 +35,10 @@ function playRound(playerSelection) {
             winner.innerText = 'Computer Wins!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             computerPoints +++ 1;
-            updateScore();
         } else if (computerSelection === 'ROCK') {
             winner.innerText = 'You Win!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             playerPoints +++ 1;
-            updateScore();
         } else
             winner.innerText = 'Its a draw!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
@@ -51,40 +49,28 @@ function playRound(playerSelection) {
             winner.innerText = 'Computer Wins!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             computerPoints +++ 1;
-            updateScore();
         } else if (computerSelection === 'PAPER') {
             winner.innerText = 'You Win!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
             playerPoints +++ 1;
-            updateScore();
         } else
             winner.innerText = 'Its a draw!';
             playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}.`;
         break;
     }
     roundsPlayed +++ 1;
-    console.log(`Player has: ${playerPoints}, Computer has: ${computerPoints}`)
-}
+    updateScore();
 
-// Loops game until either Player or Computer reaches 5
-/*window.onload = function game() {
-    while (true) {
-        if (computerPoints === 5) {
-            winner = 'COMPUTER'
-            break;
-        }
-
-        if (playerPoints === 5) {
-            winner = 'PLAYER'
-            break;
-        }
-
-        console.log(`Round ${roundsPlayed + 1}`)
-        playRound(playerSelection, computerSelection);
+    if (computerPoints === 5) {
+        let winner = 'COMPUTER'
+        alert(`GAME OVER! ${winner} WINS!`);
     }
 
-    console.log(`GAME OVER! ${winner} WINS!`)
-} */
+    if (playerPoints === 5) {
+        let winner = 'PLAYER'
+        alert(`GAME OVER! ${winner} WINS!`);
+    }
+}
 
 // UI
 
@@ -95,10 +81,12 @@ const winner = document.querySelector('.winner');
 const playout = document.querySelector('.playout');
 const playerScore = document.querySelector('.playerScore');
 const computerScore = document.querySelector('.computerScore');
+const round = document.querySelector('.round');
 
 function updateScore() {
     playerScore.innerText = `Player Score = ${playerPoints}`
     computerScore.innerText = `Computer Score = ${computerPoints}`
+    round.innerText = `Round ${roundsPlayed}`
 }
 
 rockBtn.addEventListener('click', () => playRound('ROCK'));
