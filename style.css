@@ -106,3 +106,18 @@ header {
     align-items: center;
     font-size: 85px;
 }
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #1F2937;
+    color: white;
+    text-align: center;
+}
+
+.footer h1{
+    font-size: 18px;
+    font-weight: 600;
+}
