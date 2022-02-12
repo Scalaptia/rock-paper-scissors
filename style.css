@@ -10,7 +10,7 @@ header {
     font-family: 'Press Start 2P', cursive;
     background: rgb(0, 0, 12);
     color: rgb(240, 240, 240);
-    height: 4.5em;
+    height: 6em;
     align-items: center;
     font-size: 16px;
     font-weight: 900;
@@ -31,8 +31,7 @@ header {
     flex-direction: column;
 }
 
-.winner,
-.playout {
+.winner {
     margin: 10px;
     padding: 0px;
 }
@@ -54,8 +53,8 @@ header {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .button {
@@ -64,15 +63,40 @@ header {
     width: 160px;
     height: 160px;
     font-size: 85px;
+    border: none;
 }
 
 #points {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 400px;
     padding: 10px;
-    margin: 0 auto;
-    gap: 80px;
+    gap: 60px;
     font-size: 40px;
+}
+
+.playerScore,
+.computerScore {
+    margin: 10px;
+    padding: 0px;
+}
+
+#results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    
+}
+
+.playoutPlayer,
+.playoutComputer {
+    display: flex;
+    border-radius: 10px;
+    background-color: rgb(56, 56, 56);
+    width: 160px;
+    height: 160px;
+    justify-content: center;
+    align-items: center;
+    font-size: 85px;
 }

@@ -6,7 +6,7 @@ let roundsPlayed = 0;
 
 // Choose a random weapon for the COMPUTER to play
 function computerPlay() {
-    const weapons = ['ROCK', 'PAPER', 'SCISSORS']
+    const weapons = ['🪨', '📄', '✂️']
     computerSelection = weapons[Math.floor(Math.random() * weapons.length)];
 }
 
@@ -16,46 +16,56 @@ function playRound(playerSelection) {
 
     // Logic for declaring winner
     switch(playerSelection) {
-    case 'ROCK':
-        if (computerSelection === 'PAPER') {
+    case '🪨':
+        if (computerSelection === '📄') {
             winner.innerText = 'Computer Wins!';
-            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}`;
+            playoutPlayer.innerText = `${playerSelection}`;
+            playoutComputer.innerText = `${computerSelection}`;
             computerPoints +++ 1;
-        } else if (computerSelection === 'SCISSORS') {
+        } else if (computerSelection === '✂️') {
             winner.innerText = 'You Win!';
-            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}`;
+            playoutPlayer.innerText = `${playerSelection}`;
+            playoutComputer.innerText = `${computerSelection}`;
             playerPoints +++ 1;
         } else
             winner.innerText = 'Its a draw!';
-            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}`;
+            playoutPlayer.innerText = `${playerSelection}`;
+            playoutComputer.innerText = `${computerSelection}`;
         break;
 
-    case 'PAPER':
-        if (computerSelection === 'SCISSORS') {
+    case '📄':
+        if (computerSelection === '✂️') {
             winner.innerText = 'Computer Wins!';
-            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}`;
+            playoutPlayer.innerText = `${playerSelection}`;
+            playoutComputer.innerText = `${computerSelection}`;
             computerPoints +++ 1;
-        } else if (computerSelection === 'ROCK') {
+        } else if (computerSelection === '🪨') {
             winner.innerText = 'You Win!';
-            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}`;
+            playoutPlayer.innerText = `${playerSelection}`;
+            playoutComputer.innerText = `${computerSelection}`;
             playerPoints +++ 1;
         } else
             winner.innerText = 'Its a draw!';
-            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}`;
+            playoutPlayer.innerText = `${playerSelection}`;
+            playoutComputer.innerText = `${computerSelection}`;
         break;
 
-    case 'SCISSORS':
-        if (computerSelection === 'ROCK') {
+    case '✂️':
+        if (computerSelection === '🪨') {
             winner.innerText = 'Computer Wins!';
-            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}`;
+            playoutPlayer.innerText = `${playerSelection}`;
+            playoutComputer.innerText = `${computerSelection}`;
+
             computerPoints +++ 1;
-        } else if (computerSelection === 'PAPER') {
+        } else if (computerSelection === '📄') {
             winner.innerText = 'You Win!';
-            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}`;
+            playoutPlayer.innerText = `${playerSelection}`;
+            playoutComputer.innerText = `${computerSelection}`;
             playerPoints +++ 1;
         } else
             winner.innerText = 'Its a draw!';
-            playout.innerText = `You chose ${playerSelection}, Computer chose ${computerSelection}`;
+            playoutPlayer.innerText = `${playerSelection}`;
+            playoutComputer.innerText = `${computerSelection}`;
         break;
     }
     roundsPlayed +++ 1;
@@ -64,7 +74,7 @@ function playRound(playerSelection) {
     // Declare winner
     if (computerPoints === 5) {
         let winner = 'COMPUTER'
-        alert(`Game Over! ${winner} WINS!. Press OK to restart`);
+        alert(`GAME OVER! ${winner} WINS!. Press OK to restart`);
         restartGame();
     }
     if (playerPoints === 5) {
@@ -81,10 +91,11 @@ const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
 const winner = document.querySelector('.winner');
-const playout = document.querySelector('.playout');
 const playerScore = document.querySelector('.playerScore');
 const computerScore = document.querySelector('.computerScore');
 const round = document.querySelector('.round');
+const playoutPlayer = document.querySelector('.playoutPlayer');
+const playoutComputer = document.querySelector('.playoutComputer');
 
 function updateScore() {
     playerScore.innerText = `Player: ${playerPoints}`
@@ -97,10 +108,11 @@ function restartGame(){
     computerPoints = 0;
     roundsPlayed = 0;
     updateScore();
-    winner.innerText = 'Choose your weapon!';
-    playout.innerText = `First to 5 wins`;
+    winner.innerText = 'Choose your weapon! First to 5 wins!';
+    playoutPlayer.innerText = '❓';
+    playoutComputer.innerText = '❓';
 }
 
-rockBtn.addEventListener('click', () => playRound('ROCK'));
-paperBtn.addEventListener('click', () => playRound('PAPER'));
-scissorsBtn.addEventListener('click', () => playRound('SCISSORS'));
+rockBtn.addEventListener('click', () => playRound('🪨'));
+paperBtn.addEventListener('click', () => playRound('📄'));
+scissorsBtn.addEventListener('click', () => playRound('✂️'));
