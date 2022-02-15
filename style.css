@@ -64,7 +64,6 @@ header {
     height: 160px;
     font-size: 85px;
     border: none;
-    margin-bottom: 100px;
 }
 
 #points {
@@ -116,6 +115,7 @@ header {
     background: #1F2937;
     color: white;
     text-align: center;
+    margin-top: auto;
 }
 
 .footer h1{
