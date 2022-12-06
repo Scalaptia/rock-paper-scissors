@@ -6,7 +6,7 @@ let roundsPlayed = 0;
 
 // Choose a random weapon for the COMPUTER to play
 function computerPlay() {
-    const weapons = ['🪨', '📄', '✂️']
+    const weapons = ['🗿', '📄', '✂️']
     computerSelection = weapons[Math.floor(Math.random() * weapons.length)];
 }
 
@@ -16,7 +16,7 @@ function playRound(playerSelection) {
 
     // Logic for declaring winner
     switch(playerSelection) {
-    case '🪨':
+    case '🗿':
         if (computerSelection === '📄') {
             winner.innerText = 'Computer Wins!';
             playoutPlayer.innerText = `${playerSelection}`;
@@ -39,7 +39,7 @@ function playRound(playerSelection) {
             playoutPlayer.innerText = `${playerSelection}`;
             playoutComputer.innerText = `${computerSelection}`;
             computerPoints +++ 1;
-        } else if (computerSelection === '🪨') {
+        } else if (computerSelection === '🗿') {
             winner.innerText = 'You Win!';
             playoutPlayer.innerText = `${playerSelection}`;
             playoutComputer.innerText = `${computerSelection}`;
@@ -51,7 +51,7 @@ function playRound(playerSelection) {
         break;
 
     case '✂️':
-        if (computerSelection === '🪨') {
+        if (computerSelection === '🗿') {
             winner.innerText = 'Computer Wins!';
             playoutPlayer.innerText = `${playerSelection}`;
             playoutComputer.innerText = `${computerSelection}`;
@@ -113,6 +113,6 @@ function restartGame(){
     playoutComputer.innerText = '❓';
 }
 
-rockBtn.addEventListener('click', () => playRound('🪨'));
+rockBtn.addEventListener('click', () => playRound('🗿'));
 paperBtn.addEventListener('click', () => playRound('📄'));
 scissorsBtn.addEventListener('click', () => playRound('✂️'));
